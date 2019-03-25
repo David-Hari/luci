@@ -106,7 +106,7 @@
 		end
 	end
 
-	local function render_topmenu()
+	local function render_mainmenu()
 		local childs = disp.node_childs(cattree)
 		if #childs > 0 then
 			write('<ul class="nav">')
@@ -116,7 +116,7 @@
 				local grandchildren = disp.node_childs(nnode)
 
 				if #grandchildren > 0 then
-					write('<li class="dropdown"><a class="menu" href="#">%s</a>' % striptags(translate(nnode.title)))
+					write('<li class="dropdown"><span class="menu">%s</span>' % striptags(translate(nnode.title)))
 					render_submenu(category .. "/" .. r, nnode)
 					write('</li>')
 				else
@@ -176,8 +176,7 @@
 		<header>
 			<div class="fill">
 				<div class="container">
-					<a class="brand" href="#"><%=boardinfo.hostname or "?"%></a>
-					<% render_topmenu() %>
+					<span class="brand"><%=boardinfo.hostname or "?"%></span>
 					<div class="pull-right">
 						<% render_changes() %>
 						<span id="xhr_poll_status" style="display:none" onclick="XHR.running() ? XHR.halt() : XHR.run()">
@@ -188,6 +187,8 @@
 				</div>
 			</div>
 		</header>
+
+		<% render_mainmenu() %>
 
 		<div id="maincontent" class="container">
 			<%- if luci.sys.process.info("uid") == 0 and luci.sys.user.getuser("root") and not luci.sys.user.getpasswd("root") then -%>
