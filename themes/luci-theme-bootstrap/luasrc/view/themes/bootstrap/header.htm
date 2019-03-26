@@ -96,7 +96,8 @@
 
 			for i, r in ipairs(childs) do
 				local nnode = node.nodes[r]
-				write('<li><a href="%s">%s</a></li>' %{
+				write('<li class="%s"><a href="%s">%s</a></li>' %{
+					nnode._menu_selected and 'active' or '',
 					nodeurl(prefix, r, nnode.query),
 					striptags(translate(nnode.title))
 				})
