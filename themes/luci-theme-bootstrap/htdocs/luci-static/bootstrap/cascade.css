@@ -883,7 +883,7 @@ header .fill {
 	_width: 160px;
 	margin-left: 10px;
 	margin-right: 0px;
-	padding: 3px 0;
+	padding: 3px 0 8px 0;
 	zoom: 1;
 }
 
@@ -911,20 +911,19 @@ header .fill {
 	border-radius: 4px 0 0 4px;
 }
 
-.nav .dropdown-menu li a:hover,
-.nav .dropdown-menu li a.hover {
+.nav .dropdown-menu li a:hover {
 	background-repeat: repeat-x;
-	background-image: linear-gradient(to bottom, #292929, #191919);
+	background-image: linear-gradient(to bottom, hsl(210, 30%, 26.1%), hsl(210, 30%, 19.8%));
 	color: white;
 	text-decoration: none;
-	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.025), inset 0 -1px rgba(0, 0, 0, 0.025);
+	border-color: hsl(210, 30%, 16%);
 }
 
 .nav .menu-dropdown .active a,
 .nav .dropdown-menu .active a {
 	color: white;
-	background-color: hsla(0, 0%, 0%, 0.3);
-	border: 1px solid hsla(0, 0%, 0%, 0.5);
+	background-color: hsla(210, 30%, 40%, 0.7);
+	border-color: hsl(210, 30%, 10%);
 }
 
 .open .menu,
