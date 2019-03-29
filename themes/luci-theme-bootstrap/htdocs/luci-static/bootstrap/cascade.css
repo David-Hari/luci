@@ -780,14 +780,8 @@ header {
 	right: 0;
 	z-index: 800;
 	overflow: visible;
-	color: #BFBFBF;
 }
 
-header h3 {
-	position: relative;
-}
-
-header h3 a,
 header .brand {
 	float: left;
 	display: block;
@@ -810,6 +804,21 @@ header .fill {
 	background-image: linear-gradient(to bottom, #333333, #222222);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 	padding: 0 5px;
+}
+
+header .logout {
+	margin-left: 8px;
+	padding: 12px 10px;
+	line-height: 22px;
+	color: hsl(0, 0%, 60%);
+	text-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.5);
+	background-color: hsla(0, 0%, 50%, 0.2);
+}
+
+header .logout:hover {
+	color: white;
+	text-decoration: none;
+	background-color: hsla(0, 0%, 50%, 0.4);
 }
 
 .nav {
@@ -887,11 +896,11 @@ header .fill {
 	zoom: 1;
 }
 
-.nav .dropdown-menu li {
+.nav li {
 	display: block;
 }
 
-.nav .dropdown-menu .divider {
+.nav .divider {
 	height: 1px;
 	margin: 5px 0;
 	overflow: hidden;
@@ -899,7 +908,7 @@ header .fill {
 	border-bottom: 1px solid white;
 }
 
-.nav .dropdown-menu li a {
+.nav li a {
 	display: block;
 	padding: 4px 15px;
 	font-weight: normal;
@@ -911,7 +920,7 @@ header .fill {
 	border-radius: 4px 0 0 4px;
 }
 
-.nav .dropdown-menu li a:hover {
+.nav li a:hover {
 	background-repeat: repeat-x;
 	background-image: linear-gradient(to bottom, hsl(210, 30%, 26.1%), hsl(210, 30%, 19.8%));
 	color: white;
@@ -919,8 +928,7 @@ header .fill {
 	border-color: hsl(210, 30%, 16%);
 }
 
-.nav .menu-dropdown .active a,
-.nav .dropdown-menu .active a {
+.nav .active a {
 	color: white;
 	background-color: hsla(210, 30%, 40%, 0.7);
 	border-color: hsl(210, 30%, 10%);

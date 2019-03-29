@@ -121,10 +121,13 @@
 					render_submenu(category .. "/" .. r, nnode)
 					write('</li>')
 				else
-					write('<li><a href="%s">%s</a></li>' %{
-						nodeurl(category, r, nnode.query),
-						striptags(translate(nnode.title))
-					})
+					-- Logout menu item will be placed elsewhere. See render_logout.
+					if r ~= 'logout' then
+						write('<li><a href="%s">%s</a></li>' %{
+							nodeurl(category, r, nnode.query),
+							striptags(translate(nnode.title))
+						})
+					end
 				end
 			end
 
@@ -149,6 +152,21 @@
 					translate('Unsaved Changes'),
 					ucichanges
 				})
+			end
+		end
+	end
+	
+	local function render_logout()
+		local childs = disp.node_childs(cattree)
+		if #childs > 0 then
+			for i, r in ipairs(childs) do
+				local nnode = cattree.nodes[r]
+				if r == 'logout' then
+					write('<a class="logout" href="%s">%s</a>' %{
+						nodeurl(category, r, nnode.query),
+						striptags(translate(nnode.title))
+					})
+				end
 			end
 		end
 	end
@@ -184,6 +202,7 @@
 							<span class="label success" id="xhr_poll_status_on"><%:Auto Refresh%> <%:on%></span>
 							<span class="label" id="xhr_poll_status_off" style="display:none"><%:Auto Refresh%> <%:off%></span>
 						</span>
+						<% render_logout() %>
 					</div>
 				</div>
 			</div>
