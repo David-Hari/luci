@@ -592,14 +592,6 @@ textarea {
 	cursor: not-allowed;
 }
 
-::-moz-placeholder {
-	color: #bfbfbf;
-}
-
-::-webkit-input-placeholder {
-	color: #bfbfbf;
-}
-
 .item::after,
 .btn,
 .cbi-button,
@@ -925,7 +917,7 @@ header .logout:hover {
 
 .nav li a:hover {
 	background-repeat: repeat-x;
-	background-image: linear-gradient(to bottom, hsl(210, 30%, 26.1%), hsl(210, 30%, 19.8%));
+	background-image: linear-gradient(to bottom, hsl(210, 50%, 37%), hsl(210, 50%, 22%));
 	color: white;
 	text-decoration: none;
 	border-color: hsl(210, 30%, 16%);
