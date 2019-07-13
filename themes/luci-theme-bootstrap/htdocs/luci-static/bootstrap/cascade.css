@@ -141,6 +141,7 @@ body {
 	line-height: 18px;
 	color: #404040;
 	padding: 58px 5px 5px 5px;
+	--nav-menu-width: 190px;
 }
 
 .container {
@@ -822,7 +823,7 @@ header .logout:hover {
 	left: 0;
 	top: 40px;
 	bottom: 0px;
-	width: 190px;
+	width: var(--nav-menu-width);
 	margin: 0;
 	background-color: hsl(0, 0%, 20%);
 }
