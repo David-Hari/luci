@@ -1714,8 +1714,13 @@ a.label:hover {
 /* LuCI specific items */
 .hidden { display: none }
 
-#xhr_poll_status {
-	  cursor: pointer;
+*[data-clickable] {
+	cursor: pointer;
+}
+
+#indicators > * {
+    color: hsl(0, 0%, 55%);
+	padding: 0 0.5em;
 }
 
 form.inline { display: inline; margin-bottom: 0; }
@@ -2275,7 +2280,6 @@ html body.apply-overlay-active {
 
 .assoclist .ifacebadge {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
 	white-space: normal;
 	text-align: center;
