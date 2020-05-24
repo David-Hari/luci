@@ -802,21 +802,6 @@ header .fill {
 	padding: 0 5px;
 }
 
-header .logout {
-	margin-left: 8px;
-	padding: 12px 10px;
-	line-height: 22px;
-	color: hsl(0, 0%, 60%);
-	text-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.5);
-	background-color: hsla(0, 0%, 50%, 0.2);
-}
-
-header .logout:hover {
-	color: white;
-	text-decoration: none;
-	background-color: hsla(0, 0%, 50%, 0.4);
-}
-
 .nav {
 	display: block;
 	position: fixed;
