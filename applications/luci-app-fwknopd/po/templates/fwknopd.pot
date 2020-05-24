@@ -12,7 +12,7 @@ msgid "Allow SPA clients to request forwarding destination by DNS name."
 msgstr ""
 
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:22
-msgid "Base 64 key"
+msgid "Base64 key"
 msgstr ""
 
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:33
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Enable config overwrite"
 msgstr ""
 
-#: applications/luci-app-fwknopd/luasrc/controller/fwknopd.lua:13
+#: applications/luci-app-fwknopd/root/usr/share/luci/menu.d/luci-app-fwknopd.json:3
 msgid "Firewall Knock Daemon"
 msgstr ""
 
@@ -63,10 +63,14 @@ msgid ""
 "know the external IP and set it via the -a argument."
 msgstr ""
 
+#: applications/luci-app-fwknopd/root/usr/share/rpcd/acl.d/luci-app-fwknopd.json:3
+msgid "Grant UCI access for luci-app-fwknopd"
+msgstr ""
+
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:46
 msgid ""
-"Maximum age in seconds that an SPA packet will be accepted. defaults to 120 "
-"seconds"
+"Maximum age in seconds that an SPA packet will be accepted. Defaults to 120 "
+"seconds."
 msgstr ""
 
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:19
@@ -82,7 +86,7 @@ msgid "The base64 hmac key"
 msgstr ""
 
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:17
-msgid "Use ANY for any source ip"
+msgid "Use ANY for any source IP"
 msgstr ""
 
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:8

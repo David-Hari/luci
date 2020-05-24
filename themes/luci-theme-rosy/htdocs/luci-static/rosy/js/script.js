@@ -273,7 +273,9 @@
             thisParent.removeClass('op-eye');
             $(this).prev().attr('type', 'password');
         }
-        
+
     });
 
+    $('#cbi-network-switch_vlan .table').wrap('<div id="vlan_table"></div>');
+    
 })(window, jQuery);

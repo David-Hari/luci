@@ -1,63 +1,8 @@
 -- Copyright 2008 Steven Barth <steven@midlink.org>
--- Copyright 2010-2015 Jo-Philipp Wich <jow@openwrt.org>
+-- Copyright 2010-2019 Jo-Philipp Wich <jo@mein.io>
 -- Licensed to the public under the Apache License 2.0.
 
 module("luci.controller.admin.uci", package.seeall)
-
-function index()
-	local redir = luci.http.formvalue("redir", true)
-		or table.concat(luci.dispatcher.context.request, "/")
-
-	entry({"admin", "uci"}, nil, _("Configuration"))
-	entry({"admin", "uci", "changes"}, post_on({ trigger_apply = true }, "action_changes"), _("Changes"), 40).query = {redir=redir}
-	entry({"admin", "uci", "revert"}, post("action_revert"), _("Revert"), 30).query = {redir=redir}
-
-	local node
-	local authen = function(checkpass, allowed_users)
-		return "root", luci.http.formvalue("sid")
-	end
-
-	node = entry({"admin", "uci", "apply_rollback"}, post("action_apply_rollback"), nil)
-	node.cors = true
-	node.sysauth_authenticator = authen
-
-	node = entry({"admin", "uci", "apply_unchecked"}, post("action_apply_unchecked"), nil)
-	node.cors = true
-	node.sysauth_authenticator = authen
-
-	node = entry({"admin", "uci", "confirm"}, call("action_confirm"), nil)
-	node.cors = true
-	node.sysauth = false
-end
-
-
-function action_changes()
-	local uci  = require "luci.model.uci"
-	local changes = uci:changes()
-
-	luci.template.render("admin_uci/changes", {
-		changes       = next(changes) and changes,
-		timeout       = timeout,
-		trigger_apply = luci.http.formvalue("trigger_apply") and true or false
-	})
-end
-
-function action_revert()
-	local uci = require "luci.model.uci"
-	local changes = uci:changes()
-
-	-- Collect files to be reverted
-	local r, tbl
-	for r, tbl in pairs(changes) do
-		uci:revert(r)
-	end
-
-	luci.template.render("admin_uci/revert", {
-		changes        = next(changes) and changes,
-		trigger_revert = true
-	})
-end
-
 
 local function ubus_state_to_http(errstr)
 	local map = {
@@ -106,4 +51,20 @@ function action_confirm()
 	local token = luci.http.formvalue("token")
 	local _, errstr = uci:confirm(token)
 	ubus_state_to_http(errstr)
+end
+
+function action_revert()
+	local uci = require "luci.model.uci"
+	local changes = uci:changes()
+
+	-- Collect files to be reverted
+	local _, errstr, r, tbl
+	for r, tbl in pairs(changes) do
+		_, errstr = uci:revert(r)
+		if errstr then
+			break
+		end
+	end
+
+	ubus_state_to_http(errstr or "OK")
 end

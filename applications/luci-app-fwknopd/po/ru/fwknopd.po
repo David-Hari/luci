@@ -1,17 +1,18 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: LuCI: fwknopd\n"
 "POT-Creation-Date: 2017-12-01 12:15+0300\n"
-"PO-Revision-Date: 2018-01-13 14:53+0300\n"
-"Language-Team: http://cyber-place.ru\n"
-"MIME-Version: 1.0\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
-"Last-Translator: Vladimir aka sunny <picfun@ya.ru>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"PO-Revision-Date: 2020-04-30 05:51+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/openwrt/"
+"luciapplicationsfwknopd/ru/>\n"
 "Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.0.2\n"
 "Project-Info: Это технический перевод, не дословный. Главное-удобный русский "
 "интерфейс, все проверялось в графическом режиме, совместим с другими apps\n"
 
@@ -20,8 +21,8 @@ msgid ""
 "Allow SPA clients to request access to services through an iptables firewall "
 "instead of just to it."
 msgstr ""
-"Разрешить SPA клиентам запрашивать доступ к сервисам через iptables "
-"межсетевого экрана, а не напрямую."
+"Разрешить SPA клиентам запрашивать доступ к сервисам через iptables, а не "
+"напрямую."
 
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:49
 msgid "Allow SPA clients to request forwarding destination by DNS name."
@@ -29,8 +30,8 @@ msgstr ""
 "Разрешить SPA клиентам запрашивать направление переадресации по DNS-имени."
 
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:22
-msgid "Base 64 key"
-msgstr "64-битный ключ"
+msgid "Base64 key"
+msgstr "Ключ в формате Base64"
 
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:33
 msgid ""
@@ -75,7 +76,7 @@ msgstr "Включить управление в Uci/LuCI"
 msgid "Enable config overwrite"
 msgstr "Настроить config файл"
 
-#: applications/luci-app-fwknopd/luasrc/controller/fwknopd.lua:13
+#: applications/luci-app-fwknopd/root/usr/share/luci/menu.d/luci-app-fwknopd.json:3
 msgid "Firewall Knock Daemon"
 msgstr "Firewall Knock Daemon"
 
@@ -98,10 +99,14 @@ msgstr ""
 "за NAT), либо клиент должен знать внешний IP и установить его используя "
 "аргумент '-a'."
 
+#: applications/luci-app-fwknopd/root/usr/share/rpcd/acl.d/luci-app-fwknopd.json:3
+msgid "Grant UCI access for luci-app-fwknopd"
+msgstr ""
+
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:46
 msgid ""
-"Maximum age in seconds that an SPA packet will be accepted. defaults to 120 "
-"seconds"
+"Maximum age in seconds that an SPA packet will be accepted. Defaults to 120 "
+"seconds."
 msgstr ""
 "Максимальное время в секундах, в течение которых будет принят SPA пакет, по "
 "умолчанию 120 секунд."
@@ -116,11 +121,11 @@ msgstr "Укажите ethernet интерфейс, пакеты которог�
 
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:28
 msgid "The base64 hmac key"
-msgstr "Ключ Base64 HMAC."
+msgstr "Ключ Base64 HMAC"
 
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:17
-msgid "Use ANY for any source ip"
-msgstr "Использовать ЛЮБОЙ, для любого исходящего IP."
+msgid "Use ANY for any source IP"
+msgstr "Использовать ЛЮБОЙ, для любого исходящего IP"
 
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:8
 msgid ""
@@ -128,7 +133,7 @@ msgid ""
 "ignoring any settings here."
 msgstr ""
 "Если не отмечено, будет использоваться дефолтный config файл fwknopd  (/etc/"
-"fwknopd), игнорируя любые изменения настроек fwknopd здесь. "
+"fwknopd), игнорируя любые изменения настроек fwknopd здесь."
 
 #: applications/luci-app-fwknopd/luasrc/model/cbi/fwknopd.lua:10
 msgid "access.conf stanzas"

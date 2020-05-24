@@ -13,7 +13,11 @@ function index()
 	if not nixio.fs.access("/etc/config/banip") then
 		return
 	end
-	entry({"admin", "services", "banip"}, firstchild(), _("banIP"), 40).dependent = false
+
+	local e = entry({"admin", "services", "banip"}, firstchild(), _("banIP"), 40)
+	e.dependent = false
+	e.acl_depends = { "luci-app-banip" }
+
 	entry({"admin", "services", "banip", "tab_from_cbi"}, cbi("banip/overview_tab", {hideresetbtn=true, hidesavebtn=true}), _("Overview"), 10).leaf = true
 	entry({"admin", "services", "banip", "ipset"}, template("banip/ipsetview"), _("IPSet-Lookup"), 20).leaf = true
 	entry({"admin", "services", "banip", "ripe"}, template("banip/ripeview"), _("RIPE-Lookup"), 30).leaf = true
@@ -30,7 +34,9 @@ function index()
 end
 
 function ban_action(name)
-	if name == "do_reload" then
+	if name == "do_refresh" then
+		luci.sys.call("/etc/init.d/banip refresh >/dev/null 2>&1")
+	elseif name == "do_reload" then
 		luci.sys.call("/etc/init.d/banip reload >/dev/null 2>&1")
 	end
 	luci.http.prepare_content("text/plain")

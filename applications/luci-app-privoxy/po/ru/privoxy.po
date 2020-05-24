@@ -1,17 +1,18 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: LuCI: privoxy\n"
 "POT-Creation-Date: 2017-12-14 16:00+0300\n"
-"PO-Revision-Date: 2018-01-18 22:37+0300\n"
-"Language-Team: http://cyber-place.ru\n"
-"MIME-Version: 1.0\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
-"Last-Translator: Vladimir aka sunny <picfun@ya.ru>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"PO-Revision-Date: 2020-04-19 00:53+0000\n"
+"Last-Translator: Artem <KovalevArtem.ru@gmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/openwrt/"
+"luciapplicationsprivoxy/ru/>\n"
 "Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.0.2-dev\n"
 "Project-Info: Это технический перевод, не дословный. Главное-удобный русский "
 "интерфейс, все проверялось в графическом режиме, совместим с другими apps\n"
 
@@ -173,6 +174,10 @@ msgstr "Для помощи используйте ссылку по соотв�
 #: applications/luci-app-privoxy/luasrc/model/cbi/privoxy.lua:91
 msgid "Forwarding"
 msgstr "Маршрутизация"
+
+#: applications/luci-app-privoxy/root/usr/share/rpcd/acl.d/luci-app-privoxy.json:3
+msgid "Grant UCI access for luci-app-privoxy"
+msgstr ""
 
 #: applications/luci-app-privoxy/luasrc/model/cbi/privoxy.lua:589
 msgid ""
@@ -356,7 +361,7 @@ msgid ""
 msgstr ""
 "Страница настройки расположения вспомогательных файлов Privoxy. Privoxy - "
 "использует ряд других файлов для дополнительной настройки, оказания помощи и "
-"ведения системного журнала. "
+"ведения системного журнала."
 
 #: applications/luci-app-privoxy/luasrc/controller/privoxy.lua:32
 msgid ""
@@ -398,7 +403,7 @@ msgstr "Программный пакет '%s' устарел."
 #: applications/luci-app-privoxy/luasrc/model/cbi/privoxy.lua:125
 #: applications/luci-app-privoxy/luasrc/view/privoxy/detail_startstop.htm:10
 msgid "Start"
-msgstr "Старт"
+msgstr "Запустить"
 
 #: applications/luci-app-privoxy/luasrc/model/cbi/privoxy.lua:115
 msgid "Start / Stop"
@@ -439,7 +444,7 @@ msgid ""
 "are in fact recommended!"
 msgstr ""
 "Файл (или файлы) действий для использования. Желательно использовать "
-"несколько строк 'Action Files'."
+"несколько строк 'Action Files'!"
 
 #: applications/luci-app-privoxy/luasrc/model/cbi/privoxy.lua:453
 msgid ""
